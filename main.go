@@ -41,7 +41,6 @@ func main() {
 		return libraries[i].score > libraries[j].score
 	})
 
-	//scannedBooks := NewSet()
 	for _, l := range libraries {
 
 		books := l.books
@@ -281,24 +280,6 @@ func (s *Set) AddAll(values []int) *Set {
 func (s Set) Contains(value int) bool {
 	if _, ok := s[value]; ok {
 		return true
-	}
-	return false
-}
-
-func (s Set) isValid(validSet Set) bool {
-	for i := range s {
-		if !validSet.Contains(i) {
-			return false
-		}
-	}
-	return true
-}
-
-func (s Set) containsAtLeastOne(validSet Set) bool {
-	for i := range validSet {
-		if s.Contains(i) {
-			return true
-		}
 	}
 	return false
 }
